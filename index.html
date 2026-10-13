@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Live Hong Kong weather, transport and air quality from public government data.">
+    <title>Hong Kong Live</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main class="page">
+      <header class="masthead">
+        <div class="brand"><span class="brand-mark" aria-hidden="true"></span>Hong Kong Live</div>
+        <p class="status">Live dashboard</p>
+      </header>
+
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow">City, connected</p>
+        <h1 id="page-title">Hong Kong Live</h1>
+        <p class="profile">
+          Live weather, transport and air quality from Hong Kong open data.
+        </p>
+      </section>
+
+      <section class="dashboard" aria-labelledby="dashboard-title">
+        <div class="section-heading">
+          <h2 id="dashboard-title">At a glance</h2>
+          <p>Data modules</p>
+        </div>
+        <div class="cards">
+          <article class="card weather-card" aria-labelledby="weather-title">
+            <span class="card-index">01</span>
+            <div class="weather-card__main">
+              <h3 id="weather-title">Weather</h3>
+              <p class="weather-reading" id="weather-temperature" aria-live="polite">-</p>
+              <p class="weather-label">Current temperature</p>
+            </div>
+            <div class="weather-card__meta">
+              <p class="weather-timestamp">
+                Updated <time id="weather-timestamp">Loading current conditions…</time>
+              </p>
+              <p class="weather-message" id="weather-message" role="status" hidden></p>
+            </div>
+          </article>
+          <article class="card live-card transport-card" aria-labelledby="transport-title">
+            <span class="card-index">02</span>
+            <div class="live-card__main">
+              <h3 id="transport-title">Transport</h3>
+              <p class="live-reading" id="transport-minutes" aria-live="polite">-</p>
+              <p class="live-label">Minutes to next train</p>
+            </div>
+            <div class="live-card__meta">
+              <p class="live-detail">
+                Destination code <strong id="transport-destination">Loading...</strong>
+              </p>
+              <p class="live-message" id="transport-message" role="status" hidden></p>
+            </div>
+          </article>
+          <article class="card live-card air-quality-card" aria-labelledby="air-quality-title">
+            <span class="card-index">03</span>
+            <div class="live-card__main">
+              <h3 id="air-quality-title">Air Quality</h3>
+              <p class="live-reading" id="air-quality-value" aria-live="polite">-</p>
+              <p class="live-label">Air Quality Health Index</p>
+            </div>
+            <div class="live-card__meta">
+              <p class="live-detail">
+                <strong id="air-quality-station">Loading...</strong>
+                <span aria-hidden="true"> · </span>
+                <span id="air-quality-risk">Loading...</span>
+              </p>
+              <p class="live-message" id="air-quality-message" role="status" hidden></p>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer class="data-credit">Data from the Hong Kong Government and DATA.GOV.HK.</footer>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
